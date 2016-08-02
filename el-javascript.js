@@ -91,7 +91,3 @@ function minNum(n1, n2) {
 	else (Number(n1) < Number(n2)) 
 		console.log(n1);
 }
-
-
-
-
