@@ -29,8 +29,8 @@ for (var a = char.length; a > 0; a--) {
 // ###
 // ##
 // #
-//Exercise 2 - FizzBuzz
 
+//Exercise 2 - FizzBuzz
 for(var num = 1; num <=100; num++){
 	var result = "";
 	if (num % 3 === 0) result += "fizz"
@@ -63,7 +63,7 @@ console.log(board);
 function printFarmInventory(cows, chicken) {
 	var cowString = String(cows);
 	while(cowString.length < 3)
-		cowString += "0"
+		cowString += "0" + cowString
 	console.log(cowString + " Cows");
 
 	var chickenString = String(chicken);
@@ -90,6 +90,62 @@ function minNum(n1, n2) {
 		console.log(n2);
 	else (Number(n1) < Number(n2)) 
 		console.log(n1);
+}
+
+//String Compression
+var items=[];
+function compress(str) {
+	var count = 0; fcount = 0, itemChar = 0;
+	for(var index = 0; index < str.length; index++) {
+		var char = str[index];
+		if(char == str[index+1]){
+			count += 1
+		}
+		else if(char != str[index+1]) {
+			fcount = count + 1
+			itemChar = fcount + String(char)
+			items.push(itemChar)
+			count = 0
+		}
+	}
+	var arrToStr = String(items);
+	return arrToStr.replace(/,/g,"")	
+}
+
+//get unique character position
+var itemPos = [];
+function getCharPos(str) {
+	for (var index = 0; index < str.length; index++) {
+		var char = str[index], pos = 0;
+		if (char != str[index+1]) 
+			pos = index;
+			itemPos.push(pos)
+			console.log(rem)
+		}
+}
+
+//count the number of unique character in str
+items = ["a","b","a","b","a","b","c"];
+var result = [];
+function getCharCount(str) {
+	var count = 0;
+	for(var a = 0; a < items.length; a++){
+		for (var i = 0; i < str.length; i++) {
+			if (str.charAt(i) == items[a]) {
+				count += 1;
+			}
+			result.push(count)
+			console.log(result)
+		}
+	}
+}
+
+function countChar(string, ch) {
+  var counted = 0;
+  for (var i = 0; i < string.length; i++)
+    if (string.charAt(i) == ch)
+      counted += 1;
+  console.log(counted);
 }
 
 
