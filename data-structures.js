@@ -22,6 +22,10 @@ DB[0].names // > ["joycee","john","jayvee"]
 DB[0].names[0] // > joycee
 DB[0].siblings // > true
 
+//function that lists all the events in Journal
+for(var x in JOURNAL){
+  console.log(JOURNAL[x].events)
+}
 
 var JOURNAL = [
   {"events":["carrot","exercise","weekend"],"squirrel":false},
